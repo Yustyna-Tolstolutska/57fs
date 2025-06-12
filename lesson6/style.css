@@ -1,0 +1,120 @@
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+.container-grid {
+    /* включаем свойство grid */
+    display: grid;
+    gap: 5px;
+    /* задаем правило для колонок */
+    /* * grid-template-columns: 100px 200px 30px 300px; */
+    /* grid-template-columns: repeat(4, 200px); */
+    /* grid-template-columns: 50% 10% 15% 25%; */
+    /* grid-template-columns: repeat(4, 1fr); */
+    /* grid-template-columns: 6fr 2fr 1fr 3fr; */
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.container-item {
+    background-color: lightgreen;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-grid-minmax {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* высота строк grid*/
+    grid-auto-rows: 80px;
+    gap: 5px;
+}
+
+.grid-item-adapt {
+    border-radius: 8px;
+    background-color: lightpink;
+}
+
+.grid-item-pic {
+    background-image: url(https://images.photowall.com/products/58243/galaxy-1.jpg?h=699&q=85);
+    background-size: cover;
+    color: white;
+}
+
+.felx-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #251341;
+    color: white;
+    font-size: 14px;
+}
+
+/* пример множественного слектора по классам */
+.grid-item-adapt,
+.container-item,
+.header,
+.footer,
+.content,
+.nav,
+.planet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-grid-area {
+    grid-auto-rows: 150px;
+    width: 100%;
+    display: grid;
+    /* если нужно можно выставить толщину каждой колонки */
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    /* создаем схему grid зон */
+    grid-template-areas: "header header header nav" "content content sun nav" "content content planet nav" "footer footer footer footer";
+}
+
+.planet {
+    background-image: url('https://images.theconversation.com/files/615187/original/file-20240822-16-mmtmxi.jpg?ixlib=rb-4.1.0&rect=0%2C178%2C4964%2C2482&q=45&auto=format&w=1356&h=668&fit=crop');
+    grid-area: planet;
+    font-size: 60px;
+}
+
+.header {
+    background-color: #ACADE8;
+    /* назначаем зону для элемента */
+    grid-area: header;
+}
+
+.footer {
+    background-color: #0A014F;
+    color: white;
+    grid-area: footer;
+}
+
+.content {
+    background-color: #D65780;
+    color: white;
+    grid-area: content;
+}
+
+.nav {
+    background-color: #F3E86F;
+    grid-area: nav;
+}
+
+.sun {
+    background-image: url('https://images.pexels.com/photos/301599/pexels-photo-301599.jpeg?cs=srgb&dl=pexels-pixabay-301599.jpg&fm=jpg');
+    background-size: cover;
+    background-position: center;
+    grid-area: sun;
+}
+
+.sun,
+.planet {
+    background-size: cover;
+    background-position: center;
+}
+
+

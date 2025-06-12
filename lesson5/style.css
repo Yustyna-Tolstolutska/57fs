@@ -1,0 +1,89 @@
+* {
+    font-family: 'Lucida Sans', sans-serif ;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+header {
+    width: 100%;
+    background-color: rgb(229,94,26);
+    color: white;
+    padding: 20px 50px;
+    /* position: fixed; */
+    /* приклееваем header через stickу*/
+    position: sticky;
+    /* header приклеется в самом верху страницы */
+    top: 0px;
+    /* делаем приоритетным при наложении элементов */
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    padding: 10px 50px;
+    z-index: 1;
+}
+
+main span {
+    position: sticky;
+    top: 200px;
+    background-color: rgb(229,94,26);
+    color: white;
+    font-weight: bold;
+}
+
+.fixed {
+    position: fixed;
+    top: 300px;
+    right: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(207, 79, 79);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(175, 81, 223);
+    margin-bottom: 20px;
+    z-index: -2;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(33, 146, 33);
+    border-radius: 100px;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    /* указываем значение глубины относительно других элементов */
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
